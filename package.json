@@ -1,7 +1,7 @@
 {
-  "name": "TIG-Dashboard",
+  "name": "MEAN App",
   "version": "1.0.0",
-  "description": "TIG ILAB Dashboard",
+  "description": "Mean Stack App",
   "main": "server.js",
   "scripts": {
     "dev": "concurrently --kill-others \"nodemon server\" \"npm run watch-sass\"",
@@ -19,6 +19,7 @@
     "mongoose-unique-validator": "^2.0.1",
     "node-sass": "^4.5.3",
     "nodemon": "^1.18.1",
+    "pm2": "^3.0.0",
     "pushstate-server": "^3.0.1",
     "socket.io": "^2.1.1"
   }
