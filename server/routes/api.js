@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = new express.Router();
-// const mongooseRoom = require('../models/mongoose/vms');
+//const mongoVM = require('../modules/mongo/vm');
 
 /* TODO: Template */
 router.get('/some/path', function(req, res) {

@@ -1,4 +1,4 @@
-// require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -34,4 +34,6 @@ app.set('port', port);
 const server = http.createServer(app);
 
 /* Listen on provided port, on all network interfaces. */
-server.listen(port, () => console.log(`API running on localhost:${port}`));
+server.listen(port, () => {
+  console.log(`API running on localhost:${port}`)
+});
