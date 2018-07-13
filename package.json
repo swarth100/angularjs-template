@@ -1,0 +1,19 @@
+{
+  "name": "TIG-Dashboard",
+  "version": "1.0.0",
+  "description": "TIG ILAB Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "dev": "concurrently --kill-others \"nodemon server\" \"npm run watch-sass\"",
+    "watch-sass": "./node_modules/node-sass/bin/node-sass --watch ./app/assets/scss/styles.scss -o ./app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.26.1",
+    "dotenv": "^4.0.0",
+    "node-sass": "^4.5.3",
+    "pushstate-server": "^3.0.1"
+  }
+}
