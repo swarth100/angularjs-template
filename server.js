@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const http = require('http');
-// const socket = require('./app/models/socket-io/socket-io');
+const socket = require('./server/modules/socket-io/socket-io');
 
 /* Routing */
 const apiRoute = require('./server/routes/api');
@@ -30,10 +30,12 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || '3000';
 app.set('port', port);
 
-/* Create HTTP server */
-const server = http.createServer(app);
-
-/* Listen on provided port, on all network interfaces. */
-server.listen(port, () => {
-  console.log(`API running on localhost:${port}`)
+/* Sets the server to port 3000.
+ * Opens port 3000 to listen for connections
+ * Otherwise use heroku provided port */
+app.set('port', (process.env.PORT || 3000));
+let server = app.listen(app.get('port'), () => {
+    console.log('[Server] : open on port ' + app.get('port'));
 });
+
+socket.start(server);
